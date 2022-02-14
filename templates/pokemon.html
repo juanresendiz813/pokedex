@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Pokedex Results{% endblock %}
+{% block content %}
+    <h2>Name: {{ names }}</h1>
+    <h2>Id: {{ id }}</h2>
+    <table class="centered thick-border">
+        <tr>
+                <th>Fighting Moves:</th>
+        </tr>
+        {% for name in finalHitName %}
+                <tr>
+                        <td>{{ name }}</td>
+                </tr>
+        {% endfor %}
+    </table>
+    </br>
+    <table class="centered thick-border">
+        <tr>
+                <th>Abilities:</th>
+        </tr>
+        {% for name in finalName %}
+                <tr>
+                        <td>{{ name }}</td>
+                </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

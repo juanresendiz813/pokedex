@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Pokedex Search{% endblock %}
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+<form action="/" method="POST">
+    <p>Enter pokemon name:</p>
+    <p><input type="text" name="nm" /></p>
+    <p><input type="submit" ></p>
+</form>
+
+<div class="page-header">
+    <h1>The Results</h1>
+        {% for i in count %}
+            <div> 
+                <h2>{{ dict_item }}</h2>    
+                <a href="/pokemon" id=test><img src="{{ i }}" height="100" width="100"></a>
+            </div>
+        {% endfor %}
+</div>
+
+
+
+{% endblock %}
