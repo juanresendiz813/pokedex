@@ -6,12 +6,9 @@ ports:
 - port: 8080
 
 ports:
-  - port: 8080
+  - port: 5000
     visibility: public
     onOpen: open-browser  
-  - port: 9200
-    visibility: public
-    onOpen: open-browser
 github:
   prebuilds:
     # enable for the default branch (defaults to true)
