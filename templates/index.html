@@ -10,18 +10,19 @@
     {% endwith %}
 <form action="/" method="POST">
     <p>Enter pokemon name:</p>
-    <p><input type="text" name="nm" /></p>
+    <p><input type="text" name="nm" value="" /></p>
     <p><input type="submit" ></p>
 </form>
 
 <div class="page-header">
-    <h1>The Results</h1>
-        {% for i in count %}
-            <div> 
-                <h2>{{ dict_item }}</h2>    
-                <a href="/pokemon" id=test><img src="{{ i }}" height="100" width="100"></a>
-            </div>
-        {% endfor %}
+    {% for i in range(1, 152) %}
+    <form action="/images" method="POST">
+        <p>
+            <input type="hidden" name="this_name" value="{{ i }}" />
+            <input type="image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ i }}.png" name="nm" height="100" width="100" value="{{ i }}">
+        </p>
+    </form>
+    {% endfor %}  
 </div>
 
 

@@ -9,7 +9,6 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from flask_sqlalchemy import SQLAlchemy
 import json
 from urllib.request import Request, urlopen
-from bs4 import BeautifulSoup
 
 from sqlalchemy import JSON
 
@@ -55,9 +54,6 @@ def index():
         homeData = json.loads(webpage)
         fullList = homeData["results"]
         session["fullList"] = fullList
-        count = []
-        for i in range(1, 152):
-            count.append(f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{i}.png")
     if request.method == "POST":
         user = request.form.get("nm")
         session["user"] = user
@@ -72,6 +68,12 @@ def index():
     else:
         return render_template("index.html", fullList=fullList, count=count)
 
+@app.route("/images", methods=['POST', 'GET'])
+def images():
+    if request.method == "POST":
+        user = request.form.get('this_name')
+        session["user"] = user
+        return redirect(url_for("findPokemon"))
 
 #Calls API and parses the result
 @app.route("/pokemon", methods=['POST', 'GET'])
@@ -131,5 +133,4 @@ def findPokemon():
 
 
 if __name__ == "__main__":
-    db.create_all()
     app.run(debug=True)
