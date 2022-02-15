@@ -1,6 +1,6 @@
-task:
-- init: .venv/bin/activate
-  command: pip install Flask
+tasks:
+  - init: pip3 install -r requirements.txt
+    command: python3 pokedex.py
   
 ports:
 - port: 8080
