@@ -1,5 +1,5 @@
 tasks:
-  - init: source .venv/bin/activate && pip3 install -r requirements.txt 
+  - init: python -m venv pokedex && pip3 install -r requirements.txt 
 ports:
   - port: 5000
     visibility: public
