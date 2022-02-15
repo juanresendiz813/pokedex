@@ -9,7 +9,6 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from flask_sqlalchemy import SQLAlchemy
 import json
 from urllib.request import Request, urlopen
-from bs4 import BeautifulSoup
 
 from sqlalchemy import JSON
 
@@ -131,5 +130,4 @@ def findPokemon():
 
 
 if __name__ == "__main__":
-    db.create_all()
     app.run(debug=True)
