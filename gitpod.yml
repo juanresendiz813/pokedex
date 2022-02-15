@@ -1,5 +1,7 @@
 task:
-- init: source .venv/bin/activate
+- init: .venv/bin/activate
+  command: pip install Flask
+  
 ports:
 - port: 8080
 
