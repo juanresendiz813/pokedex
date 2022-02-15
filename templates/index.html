@@ -19,7 +19,7 @@
         {% for i in count %}
             <div> 
                 <h2>{{ dict_item }}</h2>    
-                <a href="/pokemon" id=test><img src="{{ i }}" height="100" width="100"></a>
+                <a href="redirect(url_for("findPokemon"))" id=test><img src="{{ i }}" height="100" width="100"></a>
             </div>
         {% endfor %}
 </div>
