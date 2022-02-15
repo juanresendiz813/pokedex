@@ -133,4 +133,8 @@ def findPokemon():
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     app.run(debug=True)
+=======
+    app.run(debug=True)
+>>>>>>> b164d105f09d677dd87db7a802c23b1d039018b2
