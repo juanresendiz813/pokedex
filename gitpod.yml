@@ -4,6 +4,10 @@ tasks:
 ports:
   - port: 5000
     visibility: public
+    onOpen: open-browser
+    ports:
+  - port: 5000/pokemon
+    visibility: public
     onOpen: open-browser  
 github:
   prebuilds:
