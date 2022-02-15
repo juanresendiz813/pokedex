@@ -1,5 +1,5 @@
 tasks:
-  - init: pip install virtualenv && virtualenv pokedex && && source pokedex/bin/activate && pip3 install -r requirements.txt 
+  - init: python3 -m venv .venv && source .venv/bin/activate && pip3 install -r requirements.txt 
 ports:
   - port: 5000
     visibility: public
