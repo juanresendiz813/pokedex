@@ -1,5 +1,6 @@
 tasks:
-  - init: python3 -m venv .venv && source .venv/bin/activate && pip3 install -r requirements.txt 
+  - init: pip3 install -r requirements.txt 
+    command: python3 -m venv .venv && source .venv/bin/activate
 ports:
   - port: 5000
     visibility: public
