@@ -2,7 +2,7 @@ tasks:
   - init: pip3 install -r requirements.txt 
     command: python3 -m venv .venv && source .venv/bin/activate
 ports:
-  - port: 8081
+  - port: 5000
     visibility: public
     onOpen: open-browser
 github:
